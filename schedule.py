@@ -15,9 +15,9 @@ def send_slack(row, slack_url):
     # print(row.Name)    
 
     payload = {
-        'username': 'webhookbot', 
-        'text': f'New item added! {row.Name}', 
-        'icon_emoji': ':ghost:'
+        'username': '구독 UI/UX', 
+        'text': f'새 글이 올라왔어요 {row.Name} {row.Tag}', 
+        'icon_emoji': ':postbox:'
     }
 
     res = requests.post(slack_url, json=payload)
