@@ -1,3 +1,4 @@
 Flask==1.1.2
 gunicorn==20.1.0
 git+https://github.com/jamalex/notion-py.git@refs/pull/294/merge
+requests==2.21.0

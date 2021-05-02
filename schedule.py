@@ -3,8 +3,6 @@ import os
 
 import requests
 from notion.client import NotionClient
-from slack_sdk import WebClient
-from slack_sdk.errors import SlackApiError
 
 logging.basicConfig(level=logging.DEBUG)
 
