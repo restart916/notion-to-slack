@@ -5,8 +5,8 @@ from flask import request
 
 app = Flask(__name__)
 
-token = ""
-url = ''
+token = os.environ.get("TOKEN")
+url = os.environ.get("URL")
 
 def test(token, url):
     # notion
