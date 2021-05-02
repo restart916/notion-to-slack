@@ -12,17 +12,36 @@ slack_url = os.environ.get("SLACK_URL")
 
 
 def send_slack(row, slack_url):
-    # print(row.Name)    
+    page_id = ''.join(row.id.split('-'))
+    link = f'https://www.notion.so/{page_id}'
 
     payload = {
         'username': '구독 UI/UX', 
-        'text': f'새 글이 올라왔어요 {row.Name} {row.Tag}', 
-        'icon_emoji': ':postbox:'
+        'icon_emoji': ':postbox:',
+        'blocks': [
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"새 글이 올라왔어요!\n제목: {row.Name} 분류: {row.Tag} <{link}|보러가기>"
+                },
+            },
+            {
+                "type": "image",
+                "title": {
+                    "type": "plain_text",
+                    "text": "image",
+                    "emoji": True
+                },
+                "image_url": row.Cover[0],
+                "alt_text": "image"
+            }
+        ]
     }
 
     res = requests.post(slack_url, json=payload)
-    # print(res.status_code)
-    # print(res.text)
+    print(res.status_code)
+    print(res.text)
     
 def update_item(item):
     item.Send = True
