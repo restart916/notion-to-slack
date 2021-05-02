@@ -12,11 +12,11 @@ def test(token, url):
     # notion
     client = NotionClient(token_v2=token)
     cv = client.get_collection_view(url, collection=None, force_refresh=True)
-    row = cv.collection.add_row()
-    print(row)
 
-    row.Name = 'wonderful python'
-
+    for row in cv.collection.get_rows():
+        if row.Send == False:
+            row.Send = True
+            print(row)
 
 @app.route('/test', methods=['GET'])
 def getTest():
