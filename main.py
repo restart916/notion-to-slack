@@ -12,7 +12,7 @@ def test(token, url):
     # notion
     client = NotionClient(token_v2=token)
     cv = client.get_collection_view(url, collection=None, force_refresh=True)
-    # row = cv.collection.add_row()
+    row = cv.collection.add_row()
     print(row)
 
     row.Name = 'wonderful python'
