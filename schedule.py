@@ -15,7 +15,6 @@ def send_slack(row, slack_url):
     # print(row.Name)    
 
     payload = {
-        'channel': '#random', 
         'username': 'webhookbot', 
         'text': f'New item added! {row.Name}', 
         'icon_emoji': ':ghost:'
