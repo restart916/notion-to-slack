@@ -23,7 +23,7 @@ def send_slack(row, slack_url):
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": f"새 글이 올라왔어요!\n제목: {row.Name} 분류: {row.Tag} <{link}|보러가기>"
+                    "text": f"새 글이 올라왔어요!\n제목: {row.Name}\n분류: {row.Tag}\n<{link}|보러가기>"
                 },
             },
             {
