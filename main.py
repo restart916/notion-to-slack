@@ -1,7 +1,7 @@
 import os
+
+from flask import Flask, request
 from notion.client import NotionClient
-from flask import Flask
-from flask import request
 
 app = Flask(__name__)
 
