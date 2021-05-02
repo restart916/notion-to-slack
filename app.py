@@ -8,7 +8,6 @@ app = Flask(__name__)
 token = ""
 url = ''
 
-
 def test(token, url):
     # notion
     client = NotionClient(token_v2=token)
