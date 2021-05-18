@@ -33,7 +33,6 @@ def send_slack(row, slack_url):
                     "text": "image",
                     "emoji": True
                 },
-                "image_url": row.Cover[0],
                 "alt_text": "image"
             }
         ]
