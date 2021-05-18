@@ -25,15 +25,6 @@ def send_slack(row, slack_url):
                     "type": "mrkdwn",
                     "text": f"새 글이 올라왔어요!\n제목: {row.Name}\n분류: {row.Tag}\n<{link}|보러가기>"
                 },
-            },
-            {
-                "type": "image",
-                "title": {
-                    "type": "plain_text",
-                    "text": "image",
-                    "emoji": True
-                },
-                "alt_text": "image"
             }
         ]
     }
